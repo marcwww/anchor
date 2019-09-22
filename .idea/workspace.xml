@@ -2,53 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eff71f1d-764c-47e8-bd23-c21e58510f79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/anchor.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor/.ipynb_checkpoints/__init__-checkpoint.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_pingan3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_rt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/.ipynb_checkpoints/__init__-checkpoint.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/anchor_base.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/anchor_explanation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/anchor_image.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/anchor_tabular.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/anchor_text.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/css/style.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/js/anchor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/js/anchor_examples.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/js/example_roll.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/js/explanation_frame.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/js/predict_proba_react.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/js/raw_tabular.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/js/raw_text.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/ltp-mdl/pos.model" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/anchor_zh/webpack.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crash_on_ipy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/.ipynb_checkpoints/Anchor for text-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/.ipynb_checkpoints/anchor_pingan3-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/anchor_pingan3.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/pingan3/.ipynb_checkpoints/validation_data-checkpoint.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/pingan3/train_data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/pingan3/validation_data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/rt-polaritydata/rt-polarity.neg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notebooks/rt-polaritydata/rt-polarity.pos" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anchor/anchor_text.py" beforeDir="false" afterPath="$PROJECT_DIR$/anchor/anchor_text.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anchor/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/anchor/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/Anchor for text.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/Anchor for text.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/Anchor on tabular data.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/Anchor on tabular data.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notebooks/Images_todo.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/Images_todo.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +29,16 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
+              <caret column="27" selection-start-column="27" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/anchor_zh/ltp-mdl/readme">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -106,6 +70,7 @@
         <option value="$PROJECT_DIR$/anchor_pingan3.py" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/anchor_zh/utils.py" />
+        <option value="$PROJECT_DIR$/anchor_zh/ltp-mdl/readme" />
         <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
@@ -244,12 +209,12 @@
       <workItem from="1569119476282" duration="1045000" />
       <workItem from="1569121607185" duration="25000" />
       <workItem from="1569121634394" duration="8714000" />
-      <workItem from="1569143218261" duration="3380000" />
+      <workItem from="1569143218261" duration="3752000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13164000" />
+    <option name="totallyTimeSpent" value="13536000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1003" extended-state="6" />
@@ -498,10 +463,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/anchor_zh/ltp-mdl/readme">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
+          <caret column="27" selection-start-column="27" selection-end-column="27" />
         </state>
       </provider>
     </entry>
