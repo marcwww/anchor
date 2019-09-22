@@ -9,12 +9,14 @@ import lime.lime_tabular
 import os
 import sys
 
-if (sys.version_info > (3, 0)):
+if sys.version_info > (3, 0):
     def unicode(s, errors=None):
-        return s#str(s)
+        return s  # str(s)
+
 
 class Bunch(object):
     """bla"""
+
     def __init__(self, adict):
         self.__dict__.update(adict)
 
@@ -25,11 +27,13 @@ def map_array_values(array, value_map):
     for src, target in value_map.items():
         ret[ret == src] = target
     return ret
+
+
 def replace_binary_values(array, values):
     return map_array_values(array, {'0': values[0], '1': values[1]})
 
-def load_dataset(dataset_name, balance=False, discretize=True, dataset_folder='./'):
 
+def load_dataset(dataset_name, balance=False, discretize=True, dataset_folder='./'):
     if dataset_name == 'adult':
         feature_names = ["Age", "Workclass", "fnlwgt", "Education",
                          "Education-Num", "Marital Status", "Occupation",
@@ -39,8 +43,8 @@ def load_dataset(dataset_name, balance=False, discretize=True, dataset_folder='.
         categorical_features = [1, 3, 5, 6, 7, 8, 9, 10, 11, 13]
         education_map = {
             '10th': 'Dropout', '11th': 'Dropout', '12th': 'Dropout', '1st-4th':
-            'Dropout', '5th-6th': 'Dropout', '7th-8th': 'Dropout', '9th':
-            'Dropout', 'Preschool': 'Dropout', 'HS-grad': 'High School grad',
+                'Dropout', '5th-6th': 'Dropout', '7th-8th': 'Dropout', '9th':
+                'Dropout', 'Preschool': 'Dropout', 'HS-grad': 'High School grad',
             'Some-college': 'High School grad', 'Masters': 'Masters',
             'Prof-school': 'Prof-School', 'Assoc-acdm': 'Associates',
             'Assoc-voc': 'Associates',
@@ -49,37 +53,37 @@ def load_dataset(dataset_name, balance=False, discretize=True, dataset_folder='.
             "Adm-clerical": "Admin", "Armed-Forces": "Military",
             "Craft-repair": "Blue-Collar", "Exec-managerial": "White-Collar",
             "Farming-fishing": "Blue-Collar", "Handlers-cleaners":
-            "Blue-Collar", "Machine-op-inspct": "Blue-Collar", "Other-service":
-            "Service", "Priv-house-serv": "Service", "Prof-specialty":
-            "Professional", "Protective-serv": "Other", "Sales":
-            "Sales", "Tech-support": "Other", "Transport-moving":
-            "Blue-Collar",
+                "Blue-Collar", "Machine-op-inspct": "Blue-Collar", "Other-service":
+                "Service", "Priv-house-serv": "Service", "Prof-specialty":
+                "Professional", "Protective-serv": "Other", "Sales":
+                "Sales", "Tech-support": "Other", "Transport-moving":
+                "Blue-Collar",
         }
         country_map = {
             'Cambodia': 'SE-Asia', 'Canada': 'British-Commonwealth', 'China':
-            'China', 'Columbia': 'South-America', 'Cuba': 'Other',
+                'China', 'Columbia': 'South-America', 'Cuba': 'Other',
             'Dominican-Republic': 'Latin-America', 'Ecuador': 'South-America',
             'El-Salvador': 'South-America', 'England': 'British-Commonwealth',
             'France': 'Euro_1', 'Germany': 'Euro_1', 'Greece': 'Euro_2',
             'Guatemala': 'Latin-America', 'Haiti': 'Latin-America',
             'Holand-Netherlands': 'Euro_1', 'Honduras': 'Latin-America',
             'Hong': 'China', 'Hungary': 'Euro_2', 'India':
-            'British-Commonwealth', 'Iran': 'Other', 'Ireland':
-            'British-Commonwealth', 'Italy': 'Euro_1', 'Jamaica':
-            'Latin-America', 'Japan': 'Other', 'Laos': 'SE-Asia', 'Mexico':
-            'Latin-America', 'Nicaragua': 'Latin-America',
+                'British-Commonwealth', 'Iran': 'Other', 'Ireland':
+                'British-Commonwealth', 'Italy': 'Euro_1', 'Jamaica':
+                'Latin-America', 'Japan': 'Other', 'Laos': 'SE-Asia', 'Mexico':
+                'Latin-America', 'Nicaragua': 'Latin-America',
             'Outlying-US(Guam-USVI-etc)': 'Latin-America', 'Peru':
-            'South-America', 'Philippines': 'SE-Asia', 'Poland': 'Euro_2',
+                'South-America', 'Philippines': 'SE-Asia', 'Poland': 'Euro_2',
             'Portugal': 'Euro_2', 'Puerto-Rico': 'Latin-America', 'Scotland':
-            'British-Commonwealth', 'South': 'Euro_2', 'Taiwan': 'China',
+                'British-Commonwealth', 'South': 'Euro_2', 'Taiwan': 'China',
             'Thailand': 'SE-Asia', 'Trinadad&Tobago': 'Latin-America',
             'United-States': 'United-States', 'Vietnam': 'SE-Asia'
         }
         married_map = {
             'Never-married': 'Never-Married', 'Married-AF-spouse': 'Married',
             'Married-civ-spouse': 'Married', 'Married-spouse-absent':
-            'Separated', 'Separated': 'Separated', 'Divorced':
-            'Separated', 'Widowed': 'Widowed'
+                'Separated', 'Separated': 'Separated', 'Divorced':
+                'Separated', 'Widowed': 'Widowed'
         }
         label_map = {'<=50K': 'Less than $50,000', '>50K': 'More than $50,000'}
 
@@ -120,27 +124,30 @@ def load_dataset(dataset_name, balance=False, discretize=True, dataset_folder='.
     elif dataset_name == 'default':
         categorical_features = [2, 3, 4, 6, 7, 8, 9, 10, 11]
         dataset = load_csv_dataset(
-                os.path.join(dataset_folder, 'default/default.csv'), -1, ',',
-                features_to_use=range(1, 24),
-                categorical_features=categorical_features, discretize=discretize,
-                balance=balance)
+            os.path.join(dataset_folder, 'default/default.csv'), -1, ',',
+            features_to_use=range(1, 24),
+            categorical_features=categorical_features, discretize=discretize,
+            balance=balance)
     elif dataset_name == 'recidivism':
-        features_to_use = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,12, 13, 14]
+        features_to_use = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
         feature_names = ['Race', 'Alcohol', 'Junky', 'Supervised Release',
                          'Married', 'Felony', 'WorkRelease',
                          'Crime against Property', 'Crime against Person',
                          'Gender', 'Priors', 'YearsSchool', 'PrisonViolations',
                          'Age', 'MonthsServed', '', 'Recidivism']
+
         def violations_fn(x):
             x = x.astype(float)
             d = np.digitize(x, [0, 5, float('inf')],
                             right=True).astype('|S128')
             return map_array_values(d, {'0': 'NO', '1': '1 to 5', '2': 'More than 5'})
+
         def priors_fn(x):
             x = x.astype(float)
             d = np.digitize(x, [-1, 0, 5, float('inf')],
                             right=True).astype('|S128')
             return map_array_values(d, {'0': 'UNKNOWN', '1': 'NO', '2': '1 to 5', '3': 'More than 5'})
+
         transformations = {
             0: lambda x: replace_binary_values(x, ['Black', 'White']),
             1: lambda x: replace_binary_values(x, ['No', 'Yes']),
@@ -167,31 +174,30 @@ def load_dataset(dataset_name, balance=False, discretize=True, dataset_folder='.
     elif dataset_name == 'lending':
         def filter_fn(data):
             to_remove = ['Does not meet the credit policy. Status:Charged Off',
-               'Does not meet the credit policy. Status:Fully Paid',
-               'In Grace Period', '-999', 'Current']
+                         'Does not meet the credit policy. Status:Fully Paid',
+                         'In Grace Period', '-999', 'Current']
             for x in to_remove:
                 data = data[data[:, 16] != x]
             return data
+
         bad_statuses = set(["Late (16-30 days)", "Late (31-120 days)", "Default", "Charged Off"])
         transformations = {
-            16:  lambda x: np.array([y in bad_statuses for y in x]).astype(int),
-            19:  lambda x: np.array([len(y) for y in x]).astype(int),
-            6:  lambda x: np.array([y.strip('%') if y else -1 for y in x]).astype(float),
-            35:  lambda x: np.array([y.strip('%') if y else -1 for y in x]).astype(float),
+            16: lambda x: np.array([y in bad_statuses for y in x]).astype(int),
+            19: lambda x: np.array([len(y) for y in x]).astype(int),
+            6: lambda x: np.array([y.strip('%') if y else -1 for y in x]).astype(float),
+            35: lambda x: np.array([y.strip('%') if y else -1 for y in x]).astype(float),
         }
         features_to_use = [2, 12, 13, 19, 29, 35, 51, 52, 109]
         categorical_features = [12, 109]
         dataset = load_csv_dataset(
             os.path.join(dataset_folder, 'lendingclub/LoanStats3a_securev1.csv'),
-            16, ',',  features_to_use=features_to_use,
+            16, ',', features_to_use=features_to_use,
             feature_transformations=transformations, fill_na='-999',
             categorical_features=categorical_features, discretize=discretize,
             filter_fn=filter_fn, balance=True)
         dataset.class_names = ['Good Loan', 'Bad Loan']
 
-
     return dataset
-
 
 
 def load_csv_dataset(data, target_idx, delimiter=',',
@@ -317,6 +323,7 @@ def load_csv_dataset(data, target_idx, delimiter=',',
     ret.data = data
     return ret
 
+
 class Neighbors:
     def __init__(self, nlp_obj):
         self.nlp = nlp_obj
@@ -332,20 +339,32 @@ class Neighbors:
             else:
                 word = self.nlp.vocab[unicode(word)]
                 queries = [w for w in self.to_check
-                            if w.is_lower == word.is_lower]
+                           if w.is_lower == word.is_lower]
                 if word.prob < -15:
                     queries += [word]
                 by_similarity = sorted(
                     queries, key=lambda w: word.similarity(w), reverse=True)
                 self.n[orig_word] = [(self.nlp(w.orth_)[0], word.similarity(w))
                                      for w in by_similarity[:500]]
-                                    #  if w.lower_ != word.lower_]
+                #  if w.lower_ != word.lower_]
         return self.n[orig_word]
+
+
+pos_model_path = os.path.join('anchor_zh/ltp-mdl', 'pos.model')
+from pyltp import Postagger
+postagger = Postagger()
+postagger.load(pos_model_path)
+
+
+def get_pos(tokens):
+    postags = postagger.postag([tok.text for tok in tokens])
+    return list(postags)
+
 
 def perturb_sentence(text, present, n, neighbors, proba_change=0.5,
                      top_n=50, forbidden=[], forbidden_tags=['PRP$'],
                      forbidden_words=['be'],
-                     pos=['NOUN', 'VERB', 'ADJ', 'ADV', 'ADP', 'DET'], use_proba=True,
+                     pos=['n', 'v', 'a', 'd', 'p'], use_proba=True,
                      temperature=.4):
     # words is a list of words (must be unicode)
     # present is which ones must be present, also a list
@@ -358,6 +377,8 @@ def perturb_sentence(text, present, n, neighbors, proba_change=0.5,
     # pos: which POS to change
 
     tokens = neighbors.nlp(unicode(text))
+    postags = get_pos(tokens)
+
     # print [x.pos_ for x in tokens]
     eligible = []
     forbidden = set(forbidden)
@@ -366,16 +387,16 @@ def perturb_sentence(text, present, n, neighbors, proba_change=0.5,
     pos = set(pos)
     raw = np.zeros((n, len(tokens)), '|S80')
     data = np.ones((n, len(tokens)))
-    raw[:] = [x.text for x in tokens]
+    # raw[:] = [x.text for x in tokens]
+    raw[:] = [x.text.encode() for x in tokens]
     for i, t in enumerate(tokens):
         if i in present:
             continue
-        if (t.text not in forbidden_words and t.pos_ in pos and
+        if (t.text not in forbidden_words and postags[i] in pos and
                 t.lemma_ not in forbidden and t.tag_ not in forbidden_tags):
-            r_neighbors = [
-                (unicode(x[0].text.encode('utf-8'), errors='ignore'), x[1])
-                for x in neighbors.neighbors(t.text)
-                if x[0].tag_ == t.tag_][:top_n]
+            r_neighbors = [(unicode(x[0].text.encode('utf-8'), errors='ignore'), x[1])
+                           for x in neighbors.neighbors(t.text)
+                           if x[0].tag_ == t.tag_][:top_n]
             if not r_neighbors:
                 continue
             t_neighbors = [x[0] for x in r_neighbors]
@@ -385,7 +406,7 @@ def perturb_sentence(text, present, n, neighbors, proba_change=0.5,
                 weights = weights / sum(weights)
                 # print t.text
                 # print sorted(zip(t_neighbors, weights), key=lambda x:x[1], reverse=True)[:10]
-                raw[:, i] = np.random.choice(t_neighbors, n,  p=weights,
+                raw[:, i] = np.random.choice(t_neighbors, n, p=weights,
                                              replace=True)
                 # The type of data in raw is byte.
                 data[:, i] = raw[:, i] == t.text.encode()
@@ -398,10 +419,10 @@ def perturb_sentence(text, present, n, neighbors, proba_change=0.5,
                 weights = weights / sum(weights)
                 raw[changed, i] = np.random.choice(t_neighbors, n_changed, p=weights)
                 data[changed, i] = 0
-#         else:
-#             print t.text, t.pos_ in pos, t.lemma_ in forbidden, t.tag_ in forbidden_tags, t.text in neighbors
+    #         else:
+    #             print t.text, t.pos_ in pos, t.lemma_ in forbidden, t.tag_ in forbidden_tags, t.text in neighbors
     # print raw
-    if (sys.version_info > (3, 0)):
+    if sys.version_info > (3, 0):
         raw = [' '.join([y.decode() for y in x]) for x in raw]
     else:
         raw = [' '.join(x) for x in raw]

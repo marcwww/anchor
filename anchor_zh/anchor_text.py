@@ -52,7 +52,8 @@ class AnchorText(object):
             if self.use_unk_distribution:
                 data = np.ones((num_samples, len(words)))
                 raw = np.zeros((num_samples, len(words)), '|S80')
-                raw[:] = words
+                # raw[:] = words
+                raw[:] = list(map(lambda x:x.encode(), words))
                 for i, t in enumerate(words):
                     if i in present:
                         continue
@@ -61,7 +62,7 @@ class AnchorText(object):
                                                replace=False)
                     raw[changed, i] = self.mask_string
                     data[changed, i] = 0
-                if (sys.version_info > (3, 0)):
+                if sys.version_info > (3, 0):
                     raw_data = [' '.join([y.decode() for y in x]) for x in raw]
                 else:
                     raw_data = [' '.join(x) for x in raw]

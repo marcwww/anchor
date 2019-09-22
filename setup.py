@@ -13,7 +13,7 @@ setup(name='anchor_exp',
           'scipy',
           'spacy',
           'lime',
-          'scikit-learn'
+          'scikit-learn', 'pyltp'
       ],
       include_package_data=True,
       zip_safe=False)

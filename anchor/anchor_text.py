@@ -61,7 +61,7 @@ class AnchorText(object):
                                                replace=False)
                     raw[changed, i] = self.mask_string
                     data[changed, i] = 0
-                if (sys.version_info > (3, 0)):
+                if sys.version_info > (3, 0):
                     raw_data = [' '.join([y.decode() for y in x]) for x in raw]
                 else:
                     raw_data = [' '.join(x) for x in raw]
