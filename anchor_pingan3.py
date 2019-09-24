@@ -67,7 +67,7 @@ pred = explainer.class_names[predict_lr([text])[0]]
 alternative = explainer.class_names[1 - predict_lr([text])[0]]
 print('Input: %s' % text)
 print('Prediction: %s' % pred)
-exp = explainer.explain_instance(text, predict_lr, threshold=0.95, use_proba=True, verbose=True)
+exp = explainer.explain_instance(text, predict_lr, threshold=0.95, use_proba=True, verbose=False)
 
 print('Anchor: %s' % (' AND '.join(exp.names())))
 print('Precision: %.2f' % exp.precision())

@@ -324,12 +324,40 @@ def load_csv_dataset(data, target_idx, delimiter=',',
     return ret
 
 
+import faiss
+
+
 class Neighbors:
     def __init__(self, nlp_obj):
         self.nlp = nlp_obj
         self.to_check = [w for w in self.nlp.vocab
                          if w.prob >= -15 and not w.text.isspace()]
         self.n = {}
+        self.index = self.construct_index()
+
+    def get_vec(self, word):
+        if self.nlp.vocab.has_vector(word):
+            return self.nlp.vocab.get_vector(word)
+        else:  # if not exists, using averaged char embeddding instead
+            vec = 0
+            for ch in word:
+                vec += self.nlp.vocab.get_vector(ch) / len(word)
+            return vec
+
+    def construct_index(self):
+        dump_name = f'{self.nlp.lang}.embs.index'
+        try:
+            index = faiss.read_index(dump_name)
+        except:
+            print(f'File {dump_name} not found, constructing new one')
+            vecs = np.array([self.get_vec(w.text) for w in self.to_check])
+            ids = np.arange(len(vecs))
+            faiss.normalize_L2(vecs)
+            index = faiss.IndexFlatIP(vecs.shape[1])
+            index = faiss.IndexIDMap2(index)
+            index.add_with_ids(vecs, ids)
+            faiss.write_index(index, dump_name)
+        return index
 
     def neighbors(self, word):
         word = unicode(word)
@@ -339,15 +367,21 @@ class Neighbors:
                 self.n[word] = []
             else:
                 word = self.nlp.vocab[unicode(word)]
-                queries = [w for w in self.to_check
-                           if w.is_lower == word.is_lower]
-                if word.prob < -15:
-                    queries += [word]
-                by_similarity = sorted(
-                    queries, key=lambda w: word.similarity(w), reverse=True)
-                self.n[orig_word] = [(self.nlp(w.orth_)[0], word.similarity(w))
-                                     for w in by_similarity[:500]]
-                #  if w.lower_ != word.lower_]
+                word_vec = np.array([self.get_vec(word.text)])
+                faiss.normalize_L2(word_vec)
+                sims, ids_returned = self.index.search(word_vec, k=500)
+                self.n[orig_word] = [(self.nlp(self.to_check[id].orth_)[0], sim) \
+                                     for sim, id in zip(sims[0], ids_returned[0])]
+
+                # queries = [w for w in self.to_check
+                #            if w.is_lower == word.is_lower]
+                # if word.prob < -15:
+                #     queries += [word]
+                #
+                # by_similarity = sorted(
+                #     queries, key=lambda w: word.similarity(w), reverse=True)
+                # self.n[orig_word] = [(self.nlp(w.orth_)[0], word.similarity(w))
+                #                      for w in by_similarity[:500]]
         return self.n[orig_word]
 
 
