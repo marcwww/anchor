@@ -327,7 +327,8 @@ def load_csv_dataset(data, target_idx, delimiter=',',
 class Neighbors:
     def __init__(self, nlp_obj):
         self.nlp = nlp_obj
-        self.to_check = [w for w in self.nlp.vocab if w.prob >= -15]
+        self.to_check = [w for w in self.nlp.vocab
+                         if w.prob >= -15 and not w.text.isspace()]
         self.n = {}
 
     def neighbors(self, word):
@@ -352,8 +353,10 @@ class Neighbors:
 
 pos_model_path = os.path.join('anchor_zh/ltp-mdl', 'pos.model')
 from pyltp import Postagger
+
 postagger = Postagger()
 postagger.load(pos_model_path)
+import re
 
 
 def get_pos(tokens):
@@ -375,7 +378,7 @@ def perturb_sentence(text, present, n, neighbors, proba_change=0.5,
     # forbidden: forbidden lemmas
     # forbidden_tags, words: self explanatory
     # pos: which POS to change
-
+    text = re.sub(r'\s+', '', text)
     tokens = neighbors.nlp(unicode(text))
     postags = get_pos(tokens)
 
@@ -390,13 +393,15 @@ def perturb_sentence(text, present, n, neighbors, proba_change=0.5,
     # raw[:] = [x.text for x in tokens]
     raw[:] = [x.text.encode() for x in tokens]
     for i, t in enumerate(tokens):
-        if i in present:
+        if i in present or t.text.isspace():
             continue
         if (t.text not in forbidden_words and postags[i] in pos and
                 t.lemma_ not in forbidden and t.tag_ not in forbidden_tags):
             r_neighbors = [(unicode(x[0].text.encode('utf-8'), errors='ignore'), x[1])
                            for x in neighbors.neighbors(t.text)
-                           if x[0].tag_ == t.tag_][:top_n]
+                           if x[0].tag_ == t.tag_ and
+                           x[0].text != t.text and
+                           not x[0].text.isspace()][:top_n]
             if not r_neighbors:
                 continue
             t_neighbors = [x[0] for x in r_neighbors]
@@ -426,4 +431,5 @@ def perturb_sentence(text, present, n, neighbors, proba_change=0.5,
         raw = [' '.join([y.decode() for y in x]) for x in raw]
     else:
         raw = [' '.join(x) for x in raw]
+    # print(raw)
     return raw, data

@@ -11,6 +11,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from anchor_zh import anchor_text
 import jieba
 import crash_on_ipy
+from sklearn.externals import joblib
 
 
 def load_pingan3(fpath, idx2lbl=None):
@@ -42,8 +43,8 @@ vectorizer.fit(train)
 train_vectors = vectorizer.transform(train)
 valid_vectors = vectorizer.transform(valid)
 
-c = sklearn.linear_model.LogisticRegression(solver='lbfgs', max_iter=200)
-# c = sklearn.ensemble.RandomForestClassifier(n_estimators=500, n_jobs=10)
+c = sklearn.ensemble.RandomForestClassifier(n_estimators=10, n_jobs=3,
+                                            random_state=0, class_weight='balanced')
 c.fit(train_vectors, train_lbls)
 
 
@@ -57,11 +58,14 @@ preds = c.predict(train_vectors)
 print('Train f1', sklearn.metrics.f1_score(train_lbls, preds, average='macro'))
 
 nlp = spacy.load('zh')
-explainer = anchor_text.AnchorText(nlp, idx2lbl, use_unk_distribution=True)
+explainer = anchor_text.AnchorText(nlp, idx2lbl, use_unk_distribution=False)
+sidx = 3
 np.random.seed(1)
-text = train[1]
+text = valid[sidx]
+# text = ''.join(text.split())
 pred = explainer.class_names[predict_lr([text])[0]]
 alternative = explainer.class_names[1 - predict_lr([text])[0]]
+print('Input: %s' % text)
 print('Prediction: %s' % pred)
 exp = explainer.explain_instance(text, predict_lr, threshold=0.95, use_proba=True)
 
@@ -72,26 +76,7 @@ print('Examples where anchor applies and model predicts %s:' % pred)
 print()
 print('\n'.join([x[0] for x in exp.examples(only_same_prediction=True)]))
 print()
-print('Examples where anchor applies and model predicts %s:' % alternative)
+print('Examples where anchor applies and model predicts others')
 print()
-print('\n'.join([x[0] for x in exp.examples(partial_index=0, only_different_prediction=True)]))
-
-explainer = anchor_text.AnchorText(nlp, idx2lbl, use_unk_distribution=False)
-sidx = 2
-np.random.seed(1)
-text = train[sidx]
-pred = explainer.class_names[predict_lr([text])[0]]
-alternative =  explainer.class_names[1 - predict_lr([text])[0]]
-print('Prediction: %s' % pred)
-exp = explainer.explain_instance(text, predict_lr, threshold=0.95, use_proba=True)
-
-print('Anchor: %s' % (' AND '.join(exp.names())))
-print('Precision: %.2f' % exp.precision())
-print()
-print('Examples where anchor applies and model predicts %s:' % pred)
-print()
-print('\n'.join([x[0] for x in exp.examples(only_same_prediction=True)]))
-print()
-print('Examples where anchor applies and model predicts %s:' % alternative)
-print()
-print('\n'.join([x[0] for x in exp.examples(only_different_prediction=True)]))
+print('\n'.join(['\t'.join((x[0], idx2lbl[predict_lr([x[0]])[0]]))
+                 for x in exp.examples(only_different_prediction=True)]))

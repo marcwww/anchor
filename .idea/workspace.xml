@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eff71f1d-764c-47e8-bd23-c21e58510f79" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anchor_pingan3.py" beforeDir="false" afterPath="$PROJECT_DIR$/anchor_pingan3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anchor_zh/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/anchor_zh/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +17,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/anchor_zh/utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="394" column="55" selection-start-line="394" selection-start-column="55" selection-end-line="394" selection-end-column="55" />
+            <state relative-caret-position="604">
+              <caret line="360" lean-forward="true" selection-start-line="360" selection-end-line="360" />
               <folding>
                 <element signature="e#50#61#0" expanded="true" />
               </folding>
@@ -26,19 +27,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/anchor_pingan3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="27" selection-start-column="27" selection-end-column="27" />
+            <state relative-caret-position="282">
+              <caret line="65" column="30" lean-forward="true" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/anchor_zh/ltp-mdl/readme">
+        <entry file="file://$PROJECT_DIR$/anchor_zh/anchor_text.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
+            <state relative-caret-position="-553">
+              <caret line="87" column="46" lean-forward="true" selection-start-line="87" selection-start-column="46" selection-end-line="87" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -56,6 +63,7 @@
     <findStrings>
       <find>tag_</find>
       <find>pos_</find>
+      <find>name</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -67,11 +75,12 @@
         <option value="$PROJECT_DIR$/anchor_rt.py" />
         <option value="$PROJECT_DIR$/anchor/anchor_text.py" />
         <option value="$PROJECT_DIR$/anchor_zh/anchor_text.py" />
-        <option value="$PROJECT_DIR$/anchor_pingan3.py" />
         <option value="$PROJECT_DIR$/setup.py" />
-        <option value="$PROJECT_DIR$/anchor_zh/utils.py" />
         <option value="$PROJECT_DIR$/anchor_zh/ltp-mdl/readme" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/anchor_zh/anchor_base.py" />
+        <option value="$PROJECT_DIR$/anchor_zh/utils.py" />
+        <option value="$PROJECT_DIR$/anchor_pingan3.py" />
       </list>
     </option>
   </component>
@@ -98,12 +107,6 @@
               <item name="anchor" type="b2602c69:ProjectViewProjectNode" />
               <item name="anchor" type="462c0819:PsiDirectoryNode" />
               <item name="anchor_zh" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="anchor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="anchor" type="462c0819:PsiDirectoryNode" />
-              <item name="anchor_zh" type="462c0819:PsiDirectoryNode" />
-              <item name="ltp-mdl" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -209,24 +212,24 @@
       <workItem from="1569119476282" duration="1045000" />
       <workItem from="1569121607185" duration="25000" />
       <workItem from="1569121634394" duration="8714000" />
-      <workItem from="1569143218261" duration="3752000" />
+      <workItem from="1569143218261" duration="3864000" />
+      <workItem from="1569252919680" duration="7450000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13536000" />
+    <option name="totallyTimeSpent" value="21098000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1003" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16347177" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16506922" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="SVN Repositories" weight="0.32930845" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.54884744" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34687155" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3150384" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -235,8 +238,9 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32930845" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.41163558" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.33479694" />
       <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="SVN Repositories" order="13" weight="0.32930845" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -251,42 +255,39 @@
   <component name="XDebuggerManager">
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="t.pos_" language="Python" />
-        <watch expression="t.tag_" language="Python" />
-        <watch expression="t.text not in forbidden_words and t.lemma_ not in forbidden and t.tag_ not in forbidden_tags" language="Python" />
-        <watch expression="postagger.postag(['你'])" language="Python" />
-        <watch expression="os.getcwd()" language="Python" />
+        <watch expression="[n.decode() for n in t_neighbors]" language="Python" />
+        <watch expression="tokens" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/anchor$anchor_rt.coverage" NAME="anchor_rt Coverage Results" MODIFIED="1569137436559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/anchor$anchor_pingan3.coverage" NAME="anchor_pingan3 Coverage Results" MODIFIED="1569144643394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/anchor$anchor_pingan3.coverage" NAME="anchor_pingan3 Coverage Results" MODIFIED="1569296319936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
-        <expression-string>os.getcwd()</expression-string>
+        <expression-string>tokens</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>postagger.postag(['你'])</expression-string>
+        <expression-string>[n.decode() for n in t_neighbors]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>t.text not in forbidden_words and t.lemma_ not in forbidden and t.tag_ not in forbidden_tags</expression-string>
+        <expression-string>r_neighbors[0].tag</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>t.text not in forbidden_words and t.pos_ in pos and t.lemma_ not in forbidden and t.tag_ not in forbidden_tags</expression-string>
+        <expression-string>r_neighbors[0].tag_</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>t.text not in forbidden_words and t.pos_ in pos and                 t.lemma_ not in forbidden and t.tag_ not in forbidden_tags</expression-string>
+        <expression-string>r_neighbors[0][0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -296,22 +297,22 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>t.pos_</expression-string>
+        <expression-string>weights</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>raw[0,]</expression-string>
+        <expression-string>if True:print(1)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>raw[0, 0]</expression-string>
+        <expression-string>if []: print(1)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>words</expression-string>
+        <expression-string>if True: print(1)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -363,13 +364,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/anchor_zh/anchor_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="255" selection-start-line="255" selection-end-line="255" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pyltp/README.md" />
     <entry file="file://$PROJECT_DIR$/pyltp/MANIFEST.in" />
     <entry file="file://$USER_HOME$/miniconda3/envs/pingan3/lib/python3.6/site-packages/spacy/language.py">
@@ -392,16 +386,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
           <caret line="321" column="13" selection-start-line="321" selection-start-column="13" selection-end-line="321" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/anchor_zh/anchor_text.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -429,23 +413,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/anchor_pingan3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="72" column="28" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitattributes" />
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2019.1/python_stubs/986599064/pyltp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
@@ -453,27 +421,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/anchor_zh/utils.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="394" column="55" selection-start-line="394" selection-start-column="55" selection-end-line="394" selection-end-column="55" />
-          <folding>
-            <element signature="e#50#61#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/anchor_zh/ltp-mdl/readme">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
+          <caret column="30" selection-start-column="30" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/anchor_zh/anchor_explanation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="27" selection-start-column="27" selection-end-column="27" />
+        <state relative-caret-position="-913">
+          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/anchor_zh/anchor_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="329" column="30" lean-forward="true" selection-start-line="329" selection-start-column="30" selection-end-line="329" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/anchor_zh/anchor_text.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-553">
+          <caret line="87" column="46" lean-forward="true" selection-start-line="87" selection-start-column="46" selection-end-line="87" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/anchor_zh/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="360" lean-forward="true" selection-start-line="360" selection-end-line="360" />
+          <folding>
+            <element signature="e#50#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/anchor_pingan3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="65" column="30" lean-forward="true" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
