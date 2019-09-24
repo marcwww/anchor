@@ -389,6 +389,9 @@ pos_model_path = os.path.join('anchor_zh/ltp-mdl', 'pos.model')
 from pyltp import Postagger
 
 postagger = Postagger()
+if not os.path.exists(pos_model_path):
+    print('Error: pos model not exists.')
+    exit()
 postagger.load(pos_model_path)
 import re
 
