@@ -378,7 +378,7 @@ def perturb_sentence(text, present, n, neighbors, proba_change=0.5,
     # forbidden: forbidden lemmas
     # forbidden_tags, words: self explanatory
     # pos: which POS to change
-    text = re.sub(r'\s+', '', text)
+    # text = ''.join(text.strip().split())
     tokens = neighbors.nlp(unicode(text))
     postags = get_pos(tokens)
 

@@ -349,7 +349,8 @@ class AnchorBaseBeam(object):
                     ub = AnchorBaseBeam.dup_bernoulli(
                         mean, beta / state['t_nsamples'][t])
                 if verbose:
-                    print('%s mean = %.2f lb = %.2f ub = %.2f coverage: %.2f n: %d' % (t, mean, lb, ub, coverage, state['t_nsamples'][t]))
+                    print('%s mean = %.2f lb = %.2f ub = %.2f coverage: %.2f n: %d' %
+                          (t, mean, lb, ub, coverage, state['t_nsamples'][t]))
                 if mean >= desired_confidence and lb > desired_confidence - epsilon_stop:
                     if verbose:
                         print('Found eligible anchor ', t, 'Coverage:',

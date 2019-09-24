@@ -62,12 +62,12 @@ explainer = anchor_text.AnchorText(nlp, idx2lbl, use_unk_distribution=False)
 sidx = 3
 np.random.seed(1)
 text = valid[sidx]
-# text = ''.join(text.split())
+text = ''.join(text.split())
 pred = explainer.class_names[predict_lr([text])[0]]
 alternative = explainer.class_names[1 - predict_lr([text])[0]]
 print('Input: %s' % text)
 print('Prediction: %s' % pred)
-exp = explainer.explain_instance(text, predict_lr, threshold=0.95, use_proba=True)
+exp = explainer.explain_instance(text, predict_lr, threshold=0.95, use_proba=True, verbose=True)
 
 print('Anchor: %s' % (' AND '.join(exp.names())))
 print('Precision: %.2f' % exp.precision())
